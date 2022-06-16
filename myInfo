@@ -1,0 +1,85 @@
+<%-- 
+    Document   : mineInfo
+    Created on : 2022-6-14, 8:08:00
+    Author     : li134
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的资料</title>
+    <style>
+        body{
+            position: relative;
+        }
+        .first{
+            position: absolute;
+            left: 50%;
+            width: 1300px;
+            height: 100px;
+            margin-left: -650px;
+        }
+        .first img{
+            width: 100px;
+            height: 100px;
+        }
+        .first h1{
+            font-size: 30px;
+            margin-left: 120px;
+            margin-top: -80px;
+        }
+        .login{
+            float: right;
+            margin-right: 100px;
+            margin-top: -50px;
+        }
+        .second{
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            margin-left: -650px;
+            width: 1300px;
+            height: 50px;
+            
+            background-color: gray;
+        }
+        .second li{
+            list-style: none;
+            float: left;
+            margin-right: 30px;
+            cursor: pointer;
+        }
+        .info{
+            position: absolute;
+            top:300px;
+            left:150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <img src="img/xiaohui.png" alt="校徽">
+        <h1>长春工业大学论坛</h1>
+        <span class="login">你好，<a href="login.jsp"><%=request.getSession().getAttribute("nickname")%></a></span>
+    </div>
+    <div class="second">
+        <ul>
+            <li onclick="window.location.href='mainInterface.jsp'">首页</li>
+            <li onclick="window.location.href='findboardaction'">发帖</li>
+            <li>我的资料</li>
+            <li onclick="window.location.href='updatePassword.jsp'">修改密码</li>
+            <li>退出</li>
+        </ul>
+    </div>
+    <div class="info">
+        <%=request.getSession().getAttribute("nickname")%>
+        <%=request.getSession().getAttribute("name")%>
+        <%=request.getSession().getAttribute("number")%>
+    </div>
+    
+</body>
+</html>
