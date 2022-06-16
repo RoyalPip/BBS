@@ -1,0 +1,159 @@
+<%-- 
+    Document   : mainInterface
+    Created on : 2022-6-14, 9:59:21
+    Author     : WSF
+--%>
+
+<%@page import="com.orm.Board"%>
+<%@page import="java.util.ArrayList"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>
+        首页
+    </title>
+    <style>
+        body{
+            position: relative;
+        }
+        .first{
+            position: absolute;
+            left: 50%;
+            width: 1300px;
+            height: 100px;
+            margin-left: -650px;
+        }
+        .first img{
+            width: 100px;
+            height: 100px;
+        }
+        .first h1{
+            font-size: 30px;
+            margin-left: 120px;
+            margin-top: -80px;
+        }
+        .login{
+            float: right;
+            margin-right: 100px;
+            margin-top: -50px;
+        }
+        .second{
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            margin-left: -650px;
+            width: 1300px;
+            height: 50px;
+            
+            background-color: gray;
+        }
+        .second li{
+            list-style: none;
+            float: left;
+            margin-right: 30px;
+            cursor: pointer;
+        }
+        .third{
+            position: absolute;
+            top: 210px;
+            left: 200px;
+        }
+        .forth{
+            position: absolute;
+            top: 250px;
+            left: 120px;
+        }
+        .forth img{
+            width: 550px;
+            height: 300px;            
+        }
+        .forth h3{
+            float: right;
+            margin-left: 100px;
+        }
+        .fifth{
+            position: absolute;
+            top: 600px;
+            left: 100px;
+            width: 1300px;
+            height: 100px;
+        }
+        .title{
+            width: 1300px;
+            height: 30px;
+            background-color: gray;
+            line-height: 30px;
+        }
+    </style>
+    <script type="text/javascript">
+        var index = 0;
+        function changeImg(){
+        if (index == 5) {
+        index =0;
+        }
+        var current = index + 1;
+        document.getElementById('img1').src = "img1/roll"+current + ".jpg";
+        index++;
+
+        setTimeout("changeImg()",3000);
+
+        }
+    </script>
+</head>
+<body onload="changeImg()">
+    <div class="first">
+        <img src="img/xiaohui.png" alt="校徽">
+        <h1>长春工业大学论坛</h1>
+        <span class="login"><a href="login.jsp">退出登录</a></span>
+    </div>
+    <div class="second">
+        <ul>
+            <li onclick="window.location.href='mainInterface.jsp'">首页</li>
+            <li onclick="window.location.href='ccutPreview.jsp'">工大概览</li>
+            <li onclick="window.location.href='post.jsp'">发帖</li>
+            <li onclick="window.location.href='updatePassword.jsp'">修改密码</li>            
+        </ul>
+    </div>
+    <div class="third">
+        <form action="search">
+            <input type="text" name="content">
+            <input type="submit" value="搜索">
+        </form>
+    </div>
+    <div class="forth">
+        <!--<img src="img/ccut.jpg" alt="轮播图片">-->
+        <img src="img1/roll1.jpg" alt="轮播图片" width="100%" height="100%" id="img1">
+        <h3>热搜:</h3>
+    </div>
+    <div class="fifth">
+
+    </div>
+    <%
+                ArrayList list=(ArrayList)session.getAttribute("board");
+                if(list.isEmpty()){
+            %>
+                    <span>暂无板块</span>
+            <%
+                }else{
+                    for(int i=0;i<list.size();i++){
+                        Board board=(Board)list.get(i);
+            %>
+                        <div class="fifth">
+                            <div class="title">
+                                <%=board.getName()%>
+                            </div>
+                            <ul>
+                                <li onclick="window.location.href=''">联系我们</li>
+                            </ul>
+                        </div>
+            <%
+                    }
+                }
+            %>
+</body>
+</html>
