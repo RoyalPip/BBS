@@ -1,0 +1,133 @@
+<%-- 
+    Document   : ccutPreview
+    Created on : 2022-6-14, 10:40:16
+    Author     : WSF
+--%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        工大概览
+    </title>
+    <style>
+        body{
+            position: relative;
+        }
+        .first{
+            position: absolute;
+            left: 50%;
+            width: 1300px;
+            height: 100px;
+            margin-left: -650px;
+        }
+        .first img{
+            width: 100px;
+            height: 100px;
+        }
+        .first h1{
+            font-size: 30px;
+            margin-left: 120px;
+            margin-top: -80px;
+        }
+        .login{
+            float: right;
+            margin-right: 100px;
+            margin-top: -50px;
+        }
+        .second{
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            margin-left: -650px;
+            width: 1300px;
+            height: 50px;
+            
+            background-color: gray;
+        }
+        .second li{
+            list-style: none;
+            float: left;
+            margin-right: 30px;
+            cursor: pointer;
+        }
+        .third{
+            position: absolute;
+            top: 210px;
+            left: 150px;
+        }
+        .forth{
+            position: absolute;
+            top: 250px;
+            left: 120px;
+        }
+        .forth img{
+            width: 550px;
+            height: 300px;            
+        }
+        .forth h3{
+            float: right;
+            margin-left: 100px;
+        }
+        .fifth{
+            position: absolute;
+            top: 600px;
+            left: 120px;
+            width: 1300px;
+            height: 100px;
+        }
+        .title{
+            width: 1300px;
+            height: 30px;
+            background-color: gray;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <img src="img/xiaohui.png" alt="校徽">
+        <h1>长春工业大学论坛</h1>
+        <span class="login"><a href="login.jsp">退出登录</a></span>
+    </div>
+    <div class="second">
+        <ul>
+            <li onclick="window.location.href='mainInterface.jsp'">首页</li>
+            <li onclick="window.location.href='ccutPreview.jsp'">工大概览</li>
+            <li onclick="window.location.href='post.jsp'">发帖</li>
+            <li onclick="window.location.href='updatePassword.jsp'">修改密码</li> 
+        </ul>
+    </div>
+   
+    <div class="third">
+        <h3>
+            工大概览
+        </h3> 
+        <pre style=font-size:18px>
+        长春工业大学是一所以工为主，工、管、文、理、经、法、艺术等多学科相互支撑、协调发展的省属重点大学。始建于1952年，
+        建校初期是国家为筹建中国第一汽车制造厂而创办的长春汽车工业学校，先后经历了长春工业专科学校、吉林理工学院、吉林工学院等发展阶段。
+        1970年6月吉林工学院与吉林工业大学合并，1978年10月复校。2000年9月，长春煤炭工业学校、长春煤炭管理干部学院、吉林省轻工业设计学校
+        并入。2002年3月，更名为长春工业大学。1992年被吉林省政府确定为首批三所之一的省属重点高校，2004年再次被确定为省属
+        重点大学，2016年入选“中西部高校基础能力建设工程”院校。2020年3月，入选吉林省特色高水平应用研究型大学建设项目高校。
+        学校设南湖、北湖两个校区，占地面积125.2万平方米，校园环境优雅，是读书治学的理想园地。学校设有15个学院，59个本科专业。现有1个博士
+        后流动站，5个一级学科博士学位授权点，20个一级学科硕士学位授权点，14个硕士专业学位类别；吉林省特色高水平学科14个，其中，吉林省一流
+        学科3个，吉林省优势特色学科11个；国家级一流本科专业建设点10个，省级一流本科专业建设点19个，国家级“卓越计划”试点专业3个；化学
+        学科、材料科学学科、工程学学科进入ESI全球排名前1%；2022年，材料科学与工程、机械工程2个学科成功入选吉林省高校“世界一流学科培育计
+        划”立项建设学科。具有推荐优秀应届本科毕业生免试攻读硕士学位研究生资格。
+        </pre>
+    </div>
+    
+    <div class="forth">
+
+    </div>
+    
+    <div class="fifth">
+        <ul>
+            <li onclick="window.location.href=''">联系我们</li>
+        </ul>
+    </div>
+</body>
+</html>
